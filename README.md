@@ -60,3 +60,18 @@ sudo vi ~/etc/puppetlabs/puppet/puppet.config
 ```
 certname = master.vm
 ```
+# Setting up Linux Agent
+
+1. remote onto linux vm
+```
+vagrant ssh /linux/
+```
+2. add line into etc/hosts file 
+```
+192.168.50.6 linux.vm linux
+```
+3. Disable firewalld
+```
+systemctl stop firewalld
+systemctl disable firewalld
+```
