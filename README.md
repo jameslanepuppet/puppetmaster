@@ -20,6 +20,9 @@ Simple vagrant file that spins up:
 # Setting up Master 
 
 1. ssh in master.vm
+```
+vagrant ssh /master/
+```
 2. download package for centos/7 -
 ```
 sudo curl -JLO 'https://pm.puppet.com/cgi-bin/download.cgi?dist=el&rel=7&arch=x86_64&ver=latest'
@@ -35,4 +38,25 @@ cd puppet-enterprise-2019.5.0-el-7-x86_64
 5. run puppet installer
 ```
 sudo ./puppet-enterprise-installer
+```
+----------------------------------------
+6. check hostname for machhine, it should be master.vm
+```
+hostname
+```
+7. edit ~/etc/hosts
+```
+sudo vi ~/etc/hosts
+```
+8. add this into the file
+```
+192.168.50.4 master.vm master
+```
+9. edit puppet config file 
+```
+sudo vi ~/etc/puppetlabs/puppet/puppet.config
+```
+10. make changes in file
+```
+certname = master.vm
 ```
