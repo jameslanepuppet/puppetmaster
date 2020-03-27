@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
   end 
 
   config.vm.define "windows.vm" do |windows|
-    windows.vm.box = "kensykora/windows_2012_r2_standard"
+    windows.vm.box = "ferventcoder/win2012r2-x64-nocm"
     windows.vm.communicator = "winrm"
     windows.vm.hostname = "windows"
     windows.vm.network "private_network", ip: "192.168.50.5"
